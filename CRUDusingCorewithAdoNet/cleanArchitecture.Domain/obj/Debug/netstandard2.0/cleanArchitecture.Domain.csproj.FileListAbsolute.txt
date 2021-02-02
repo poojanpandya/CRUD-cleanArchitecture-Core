@@ -1,9 +1,0 @@
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\bin\Debug\netstandard2.0\cleanArchitecture.Domain.deps.json
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\bin\Debug\netstandard2.0\cleanArchitecture.Domain.dll
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\bin\Debug\netstandard2.0\cleanArchitecture.Domain.pdb
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\obj\Debug\netstandard2.0\cleanArchitecture.Domain.AssemblyInfoInputs.cache
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\obj\Debug\netstandard2.0\cleanArchitecture.Domain.AssemblyInfo.cs
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\obj\Debug\netstandard2.0\cleanArchitecture.Domain.csproj.CoreCompileInputs.cache
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\obj\Debug\netstandard2.0\cleanArchitecture.Domain.dll
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\obj\Debug\netstandard2.0\cleanArchitecture.Domain.pdb
-E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Domain\obj\Debug\netstandard2.0\cleanArchitecture.Domain.csprojAssemblyReference.cache
