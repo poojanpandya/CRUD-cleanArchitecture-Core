@@ -1,0 +1,210 @@
+﻿@model cleanArchitecture.Domain.Models.User
+@{
+    ViewData["Title"] = "AddUpdateUser";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="card-header" style="font-size: large;margin-top: 9px;">
+    <i class="fa fa-align-justify"></i>
+    @if (Model.UserId > 0)
+    {
+        <span>Update User</span>
+    }
+    else
+    {
+        <span>Add User</span>
+    }
+
+</div>
+
+@using (Html.BeginForm("AddUpdateUser", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(Model => Model.UserId, new { @id = "UserId" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Firstname, new { @id = "Firstname", htmlAttributes = new { @class = "form-control", @placeholder = "Firstname" } })
+                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Lastname, new { @id = "Lastname", htmlAttributes = new { @class = "form-control", @placeholder = "Lastname" } })
+                @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Dateofbirth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @*@Html.TextBoxFor(m => m.Dateofbirth, new { @id = "datepicker", @class = "form-control"})*@
+                <input asp-for="Dateofbirth" id="datepicker" type="text" class="form-control" value="@Model.Dateofbirth" />
+                @*@Html.TextBoxFor(model => model.Dateofbirth, new { @class = "form-control datepicker", placeholder = "Enter Drop-off date here..." })*@
+                <span asp-validation-for="Dateofbirth" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Email, new { @id = "Email", htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Profilepicture, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                <input class="form-control" type='file' id="imgInp" name="files" />
+                @if (@Model.Profilepicture != null)
+                {
+                    <div class="fileUpload" id="filediv">
+                        <img class="profilepic" id="blah" src="@Model.Profilepicture" alt="your image" />
+                    </div>
+                }
+                else
+                {
+                    <div class="fileUpload" id="filediv" style="display: none;">
+                        <img class="profilepic" id="blah" src="#" alt="your image" />
+                    </div>
+                }
+                @*@Html.EditorFor(model => model.Profilepicture, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Profilepicture, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                <input class="form-control" type="text" id="age" value="@Model.Age" disabled>
+                @*@Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                Male:
+                @Html.RadioButtonFor(m => m.Gender, 1, new { @id = "Gender", htmlAttributes = new { @class = "form-control" } })
+                Female:
+                @Html.RadioButtonFor(m => m.Gender, 2, new { @id = "Gender", htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+            <span style = "margin-left: 15px" asp-validation-for="Gender" class="text-danger"></span>
+            @*@Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger", @style = "margin - left: 15px" })*@
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Country: </label>
+            @*@Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-4">
+                @Html.DropDownListFor(m => m.CountryId, ViewBag.CountryList as SelectList, "-- Select Country --",
+             new { @id = "CountryId", @class = "form-control", @placeholder = "Select Country" })
+                @Html.ValidationMessageFor(m => m.CountryId, null, new { @class = "text-danger error" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">State: </label>
+            @*@Html.LabelFor(model => model.StateId, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-4">
+                @if (ViewBag.StateList != null)
+                {
+                    @Html.DropDownListFor(m => m.StateId, ViewBag.StateList as SelectList, "-- Select State --",
+                  new { @id = "StateId", @class = "form-control", @placeholder = "Select City" })
+                }
+                else
+                {
+                    @Html.DropDownListFor(m => m.StateId, new List<SelectListItem>(), "-- Select State --",
+                             new { @id = "StateId", @class = "form-control", @placeholder = "Select State" })
+                }
+                @Html.ValidationMessageFor(m => m.StateId, null, new { @class = "text-danger error" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">City: </label>
+            @*@Html.LabelFor(model => model.CityId, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-4">
+                @if (ViewBag.CityList != null)
+                {
+                    @Html.DropDownListFor(m => m.CityId, ViewBag.CityList as SelectList, "-- Select City --",
+               new { @id = "CityId", @class = "form-control", @placeholder = "Select City" })
+                }
+                else
+                {
+                    @Html.DropDownListFor(m => m.CityId, new List<SelectListItem>(), "-- Select City --",
+                          new { @id = "CityId", @class = "form-control", @placeholder = "Select City" })
+                }
+                @Html.ValidationMessageFor(m => m.CityId, null, new { @class = "text-danger error" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.TextAreaFor(m => m.Address, new { @id = "Address", @class = "form-control", @rows = "5", @placeholder = "Address", @maxlength = "200" })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2"> Hobbies</label>
+            <div class="col-md-4">
+                <table id="tbl2">
+                    @Html.ListBoxFor(m => m.HobbiesArray, ViewBag.HobbyList as MultiSelectList, new { @class = "form-control", multiple = "multiple" })
+                    @Html.ValidationMessageFor(m => m.HobbiesArray, null, new { @class = "text-danger" })
+
+                </table>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phoneno, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Phoneno, new { @id = "Phoneno", htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phoneno, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <hr />
+        <div class="form-group">
+            <div class="col-md-4">
+                @if (Model.UserId == 0)
+                {
+                    <input type="submit" value="Save" class="btn btn-success btn-default">
+                }
+                else
+                {
+                    <input type="submit" value="Update" class="btn btn-success btn-default" id="submit">
+
+                }
+                @Html.ActionLink("Back", "Index", "Home", null, new { @class = "btn btn-default" })
+
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts
+{
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <script src="~/js/Customjs/user.js"></script>
+}
+
+

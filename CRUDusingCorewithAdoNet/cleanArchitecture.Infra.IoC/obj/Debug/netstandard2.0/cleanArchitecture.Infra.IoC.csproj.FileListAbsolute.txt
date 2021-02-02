@@ -1,0 +1,16 @@
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.deps.json
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.dll
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.pdb
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Application.dll
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Domain.dll
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Infra.Data.dll
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Application.pdb
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Infra.Data.pdb
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\bin\Debug\netstandard2.0\cleanArchitecture.Domain.pdb
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.csprojAssemblyReference.cache
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.AssemblyInfoInputs.cache
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.AssemblyInfo.cs
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.csproj.CoreCompileInputs.cache
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.csproj.CopyComplete
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.dll
+E:\All Projects\ThisPC\CRUDusingCorewithAdoNet\cleanArchitecture.Infra.IoC\obj\Debug\netstandard2.0\cleanArchitecture.Infra.IoC.pdb
